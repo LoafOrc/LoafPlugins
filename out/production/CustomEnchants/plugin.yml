@@ -1,0 +1,16 @@
+name: CustomEnchants
+version: 1.0
+author: LoafOfBread
+main: com.loafofbread.customenchants.CustomEnchants
+api-version: 1.14
+commands:
+  heal:
+    description: Heals player
+    usage: /<command>
+    aliases: [healing, healme]
+  farmtime:
+    description: Spawns specified farm animal
+    usage: /<command>
+  enchantgui:
+    description: Open Enchantment Table GUI anywhere
+    usage: /<command>
