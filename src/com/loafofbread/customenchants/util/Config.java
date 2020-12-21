@@ -12,10 +12,14 @@ public class Config {
     public static void DefaultConfig() {
 
         config.addDefault("sword.max", 2);
-
         SwordEnchant(1, "Life-Steal",20);
         SwordEnchant(2, "Hard-Hitting",45);
-        
+
+
+        config.addDefault("pickaxe.max", 2);
+        PickaxeEnchant(1, "Explosive", 20);
+        PickaxeEnchant(2, "Haste", 35);
+
         config.options().copyDefaults(true);
 
     }

@@ -43,7 +43,7 @@ public class EnchantingTable implements InventoryHolder {
         Integer ID = Config.getRandomID(ToolType);
 
         //Create basic item with name
-        ItemStack _result = Utility.createItem(Material.BOOK, ChatColor.WHITE + Config.config.getString(ToolType + "." + ID + ".name"));
+        ItemStack _result = Utility.createItem(Material.BOOK, ChatColor.GRAY + Config.config.getString(ToolType + "." + ID + ".name"));
         // Get ItemMeta
         ItemMeta _meta = _result.getItemMeta();
 
@@ -55,7 +55,7 @@ public class EnchantingTable implements InventoryHolder {
         List<String> Lore = new ArrayList<String>();
 
 
-        Lore.add(ChatColor.GRAY + Config.config.getString(ToolType + "." + ID + ".cost") + " XP");
+        Lore.add(ChatColor.GREEN + Config.config.getString(ToolType + "." + ID + ".cost") + " XP");
 
         _meta.setLore(Lore); // Update Lore
         _result.setItemMeta(_meta); //Commit Changes

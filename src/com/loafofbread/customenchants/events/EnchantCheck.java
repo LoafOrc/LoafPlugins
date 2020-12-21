@@ -18,12 +18,9 @@ public class EnchantCheck implements Listener {
     }
 
     public static boolean checkForEnchant(ItemStack item, String Enchant) {
-        boolean Result = false;
         for (int i = 0; i < item.getItemMeta().getLore().size(); i++) {
-            if (item.getItemMeta().getLore().get(i) == Enchant)
-                Result = true;
+            if (item.getItemMeta().getLore().get(i).equals(ChatColor.GRAY + Enchant)) return true;
         }
-
-        return Result;
+        return false;
     }
 }
