@@ -2,6 +2,7 @@ package com.loafofbread.customenchants;
 
 import com.loafofbread.customenchants.commands.Commands;
 import com.loafofbread.customenchants.commands.EnchantGui;
+import com.loafofbread.customenchants.events.EnchantCheck;
 import com.loafofbread.customenchants.events.Events;
 import com.loafofbread.customenchants.events.GUIEvents;
 import com.loafofbread.customenchants.util.Config;
@@ -26,6 +27,7 @@ public class CustomEnchants extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new Events(), this);
         getServer().getPluginManager().registerEvents(new GUIEvents(), this);
+        getServer().getPluginManager().registerEvents(new EnchantCheck(), this);
         getCommand("heal").setExecutor(commands);
         getCommand("farmtime").setExecutor(commands);
         getCommand("enchantgui").setExecutor(new EnchantGui());

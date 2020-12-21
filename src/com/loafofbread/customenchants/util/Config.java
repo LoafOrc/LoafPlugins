@@ -15,6 +15,7 @@ public class Config {
 
         SwordEnchant(1, "Life-Steal",20);
         SwordEnchant(2, "Hard-Hitting",45);
+        
         config.options().copyDefaults(true);
 
     }
@@ -22,6 +23,11 @@ public class Config {
     public static void SwordEnchant(Integer id, String name, Integer cost) {
         config.addDefault("sword." + id + ".name", name);
         config.addDefault("sword." + id + ".cost", cost);
+    }
+
+    public static void PickaxeEnchant(Integer id, String name, Integer cost) {
+        config.addDefault("pickaxe." + id + ".name", name);
+        config.addDefault("pickaxe." + id + ".cost", cost);
     }
 
     public static Integer getRandomID(String Type) {
