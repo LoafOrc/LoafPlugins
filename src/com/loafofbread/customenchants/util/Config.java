@@ -31,7 +31,7 @@ public class Config {
     }
 
     public static Integer getRandomID(String Type) {
-        return ThreadLocalRandom.current().nextInt(0, config.getInt(Type + ".max"));
+        return ThreadLocalRandom.current().nextInt(0, config.getInt(Type + ".max")) + 1;
     }
 
 }

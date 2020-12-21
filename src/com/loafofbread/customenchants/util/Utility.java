@@ -34,8 +34,16 @@ public class Utility {
         return online;
     }
 
-    public boolean IsPickaxe(ItemStack item) {
-        return item.getType().toString().endsWith("PICKAXE");
+    public String ToolType(ItemStack item) {
+
+        if (item.getType() == Material.AIR) return null; //If there is no item selected return with null
+
+        //Pickaxe
+        if (item.getType() == Material.IRON_PICKAXE || item.getType() == Material.DIAMOND_PICKAXE || item.getType() == Material.NETHERITE_PICKAXE) return "pickaxe";
+        //Sword
+        if (item.getType() == Material.IRON_SWORD || item.getType() == Material.DIAMOND_SWORD || item.getType() == Material.NETHERITE_SWORD) return "sword";
+
+        return null;
     }
 
 }

@@ -31,7 +31,7 @@ public class GUIEvents implements Listener {
             ItemMeta PlayerMeta = PlayerItem.getItemMeta();
 
             if (PlayerMeta == null) {
-                System.out.println(ChatColor.RED + "[CustomEnchants] Something went wrong when trying to enchant. For advanced users, the player's item had no item meta data");
+                System.out.println(ChatColor.RED + "[CustomEnchants] The player's item had no item meta data");
                 return;
             }
             List<String> Lore = new ArrayList<String>();

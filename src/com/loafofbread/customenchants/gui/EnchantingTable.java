@@ -12,6 +12,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import javax.tools.Tool;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,16 +33,17 @@ public class EnchantingTable implements InventoryHolder {
         fill(Utility.createItem(Material.LIGHT_GRAY_STAINED_GLASS, ""));
         Inv.setItem(4, PlayerItem);
 
-        Integer ID = Config.getRandomID("sword") + 1;
-        ItemStack EnchantPackage = CreateEnchantPackage(ID);
+        ItemStack EnchantPackage = CreateEnchantPackage(Utility.ToolType(PlayerItem));
         Inv.setItem(22, EnchantPackage);
 
     }
 
-    private ItemStack CreateEnchantPackage(Integer ID) {
+    private ItemStack CreateEnchantPackage(String ToolType) {
+
+        Integer ID = Config.getRandomID(ToolType);
 
         //Create basic item with name
-        ItemStack _result = Utility.createItem(Material.BOOK, ChatColor.WHITE + Config.config.getString("sword." + ID + ".name"));
+        ItemStack _result = Utility.createItem(Material.BOOK, ChatColor.WHITE + Config.config.getString(ToolType + "." + ID + ".name"));
         // Get ItemMeta
         ItemMeta _meta = _result.getItemMeta();
 
@@ -53,7 +55,7 @@ public class EnchantingTable implements InventoryHolder {
         List<String> Lore = new ArrayList<String>();
 
 
-        Lore.add(ChatColor.GRAY + Config.config.getString("sword." + ID + ".cost" + " XP"));
+        Lore.add(ChatColor.GRAY + Config.config.getString(ToolType + "." + ID + ".cost") + " XP");
 
         _meta.setLore(Lore); // Update Lore
         _result.setItemMeta(_meta); //Commit Changes
