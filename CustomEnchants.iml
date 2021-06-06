@@ -7,14 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../Dependencies/spigot-api-1.16.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="BattleRoyal" level="project" />
+    <orderEntry type="library" name="cache" level="project" />
+    <orderEntry type="library" name="Dependinces" level="project" />
   </component>
 </module>
